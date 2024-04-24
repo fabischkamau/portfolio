@@ -108,9 +108,7 @@ export default function index() {
       }
     }
   }
-  useEffect(() => {
-    console.log(getFieldState("avatarUrl"));
-  }, []);
+
   return (
     <div className="p-10">
       <section id="title">

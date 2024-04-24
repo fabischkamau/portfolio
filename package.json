@@ -52,6 +52,7 @@
     "tailwindcss-animate": "^1.0.7",
     "tiptap-extension-resize-image": "^1.0.4",
     "use-debounce": "^10.0.0",
+    "yup": "^1.4.0",
     "zod": "^3.22.4"
   },
   "devDependencies": {

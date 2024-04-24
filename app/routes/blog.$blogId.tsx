@@ -29,7 +29,7 @@ export async function loader({ params }: LoaderFunctionArgs) {
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
   return [
     { title: data?.blog?.title },
-    { name: "article", content: data?.blog?.description },
+    { name: "description", content: data?.blog?.description },
   ];
 };
 
