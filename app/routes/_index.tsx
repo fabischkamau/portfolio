@@ -123,7 +123,16 @@ export default function Index() {
           })}
         />
       </section>
-      <ProjectsSection />
+      <ProjectsSection
+        projects={loaderData[1].map((item) => {
+          return {
+            title: item.title,
+            description: item.description,
+            imageUrl: item.imgUrl,
+            link: item.projectUlr,
+          };
+        })}
+      />
     </HomeLayout>
   );
 }

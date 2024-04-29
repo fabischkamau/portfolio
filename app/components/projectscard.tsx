@@ -21,7 +21,20 @@ const projects = [
   },
   // Add more projects as needed
 ];
-export default function ProjectsSection({ className }: { className?: string }) {
+type Project = {
+  title: string;
+  description: string;
+  imageUrl: string;
+  link: string;
+  technologies?: string[];
+};
+export default function ProjectsSection({
+  projects,
+  className,
+}: {
+  projects: Project[];
+  className?: string;
+}) {
   return (
     <section className="container mx-auto px-4 pt-20 space-y-5">
       <h1 className="text-3xl font-bold text-gray-800 text-center mb-8">
@@ -36,7 +49,7 @@ export default function ProjectsSection({ className }: { className?: string }) {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="rounded-lg shadow-sm overflow-hidden mt-5 pt-10"
+            className="rounded-lg shadow-sm overflow-hidden mt-5 pt-10 hover:border-2 hover:border-sky-600"
           >
             <img
               src={project.imageUrl}
@@ -59,14 +72,16 @@ export default function ProjectsSection({ className }: { className?: string }) {
                   <ArrowRight className="size-5" />
                 </Link>
                 <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech, idx) => (
-                    <span
-                      key={idx}
-                      className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                  {project?.technologies
+                    ? project.technologies.map((tech, idx) => (
+                        <span
+                          key={idx}
+                          className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
+                        >
+                          {tech}
+                        </span>
+                      ))
+                    : null}
                 </div>
               </div>
             </div>
