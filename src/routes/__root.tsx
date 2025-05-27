@@ -16,9 +16,6 @@ export const Route = createRootRoute({
       select: (location) => location.pathname,
     });
 
-    // Get route params to extract blogId if we're on a blog detail page
-    const params = useParams({ from: "__root__" });
-
     // Determine current page type and extract IDs
     let currentPage = pathname;
     let currentBlogId: number | undefined;
