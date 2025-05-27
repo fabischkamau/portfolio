@@ -5,7 +5,6 @@ import {
   Outlet,
   createRootRoute,
   useLocation,
-  useParams,
 } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 
