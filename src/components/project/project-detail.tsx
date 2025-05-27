@@ -11,7 +11,6 @@ import {
   ArrowLeft,
   Calendar,
   Clock,
-  User,
   Building,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
